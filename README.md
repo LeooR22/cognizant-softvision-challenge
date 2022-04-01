@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Cognizant Softvision challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Necesitamos una manera interna, fácil de poder administrar nuestros candidatos basado en que paso se encuentran, vivimos en un universo paralelo donde trello ni kanban existen pero se nos ocurrió una genial idea donde nos organizamos usando columnas y filas.
 
-## Available Scripts
+Debemos implementar una columna por cada uno de los pasos de nuestro proceso (`"Entrevista inicial" | "Entrevista técnica" | "Oferta" | "Asignación" | "Rechazo"`), donde podamos tener candidatos que podamos mover entre columnas, una a la vez, sin saltar columnas. También podemos agregar candidatos a la primera columna y cada candidato puede tener opcionalmente un texto de comentario para saber como le está yendo en el proceso. Los candidatos pueden avanzar o retroceder con botones que se encuentran dentro de sus tarjetas.
 
-In the project directory, you can run:
+El cliente nos dejó este proyecto configurado con React y SASS, pero nos dijo que podemos usar lo que queramos. También nos dejó un mock para traer los candidatos en `/api/candidates.json` y nos pidió que implementemos el método de `/api/index.ts` para que devuelva una promesa así es más fácil de implementar el backend cuando lo tengamos.
 
-### `npm start`
+También nos dijo que no era requerido, pero nos iba a pagar un importante bono por cada punto extra:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Tests de integración con Cypress
+- Tests unitarios con Jest y React Testing Library
+- Guardar el progreso de los candidatos en localStorage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Como el cliente no sabe de desarrollo nos pidió que despleguemos nuestra aplicación en algún lado y le mandemos un link para ver el progreso.
 
-### `npm test`
+Nos dejó este ejemplo de como debería quedar:
+![Demo](./src/demo/demo.png "Demo")
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Corriendo el proyecto
 
-### `npm run build`
+```bash
+# Instalar dependencias del proyecto
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Correr el servidor de desarrollo
+npm run dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Modalidad de entrega
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Repositorio público subido a GitHub, Gitlab, Bitbucket.
