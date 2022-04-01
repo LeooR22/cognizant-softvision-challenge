@@ -8,6 +8,9 @@ const mockSteps = [
 
 export const interviewReducer = (state = [], action) => {
   switch (action.type) {
+    case "add":
+      return [...state, action.payload];
+
     case "prevStep":
       return state.map((participant) =>
         participant.id === action.payload.id

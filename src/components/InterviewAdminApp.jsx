@@ -1,31 +1,7 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { interviewReducer } from "../reducers/interviewReducer";
 import InterviewCols from "./InterviewCols";
 import "../styles.css";
-
-const mockParticipants = [
-  {
-    id: "goncy",
-    name: "Gonzalo Pozzo",
-    step: "Entrevista técnica",
-    idStep: 1,
-    comments: "Medio pelo",
-  },
-  {
-    id: "doe",
-    name: "John Doe",
-    step: "Entrevista inicial",
-    idStep: 0,
-    comments: "???",
-  },
-  {
-    id: "goku",
-    name: "Goku",
-    step: "Asignacion",
-    idStep: 3,
-    comments: "xd",
-  },
-];
 
 const mockSteps = [
   "Entrevista inicial",
@@ -36,11 +12,21 @@ const mockSteps = [
 ];
 
 const init = () => {
-  return mockParticipants;
+  return JSON.parse(localStorage.getItem("participants")) || [];
 };
-
 export const InterviewAdminApp = () => {
   const [participants, dispatch] = useReducer(interviewReducer, [], init);
+
+  useEffect(() => {
+    localStorage.setItem("participants", JSON.stringify(participants));
+  }, [participants]);
+
+  const handleAdd = (newParticipant) => {
+    dispatch({
+      type: "add",
+      payload: newParticipant,
+    });
+  };
 
   const handlePrev = (participant) => {
     dispatch({
@@ -66,6 +52,7 @@ export const InterviewAdminApp = () => {
             participants={participants}
             start={true}
             titleCol={mockSteps[0]}
+            handleAdd={handleAdd}
           />
           <InterviewCols
             handleNext={handleNext}

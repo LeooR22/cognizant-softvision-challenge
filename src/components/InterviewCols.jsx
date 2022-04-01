@@ -1,5 +1,4 @@
 import { ParticipantCard } from "./ParticipantCard";
-import Modal from "react-modal";
 import { ParticipantAddModal } from "./ParticipantAddModal";
 
 const InterviewCols = ({
@@ -9,7 +8,7 @@ const InterviewCols = ({
   end = false,
   handlePrev,
   handleNext,
-  addParticipant,
+  handleAdd,
 }) => {
   const filterParticipant = participants?.filter(
     (participant) => participant.step === titleCol
@@ -38,7 +37,7 @@ const InterviewCols = ({
             ))
           )}
           {/* Iterar array */}
-          {start && <ParticipantAddModal />}
+          {start && <ParticipantAddModal handleAdd={handleAdd} />}
         </div>
       </div>
     </div>
